@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Academy</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+ </head>
+<body>
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a th:href="@{/}">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a th:href="@{/registration}">Registration</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <h1>Welcome to the Java Academy</h1>
+            <p th:text="${message}">Let's get started</p>
+            <a th:href="@{/registration}">Go to Registration Page</a>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; <span th:text="${#dates.format(#dates.createNow(), 'yyyy')}"></span> Java Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
