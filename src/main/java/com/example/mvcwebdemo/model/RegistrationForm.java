@@ -1,0 +1,64 @@
+package com.example.mvcwebdemo.model;
+
+import jakarta.validation.constraints.*;
+import org.springframework.format.annotation.DateTimeFormat;
+import java.time.LocalDate;
+
+public class RegistrationForm {
+    @NotBlank(message = "First Name is required")
+    private String firstName;
+
+    @NotBlank(message = "Last Name is required")
+    private String lastName;
+
+    @NotBlank(message = "Country is required")
+    private String country;
+
+    @Past(message = "Date of Birth must be in the past")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dob;
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Invalid email format")
+    private String email;
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+}
